@@ -13,3 +13,4 @@ pip install > requirements.txt
 ```
 Запускаем `main.py`
 
+Создать файл `.env` и прописать в нём переменные: `TOKEN`
