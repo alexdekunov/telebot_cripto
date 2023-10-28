@@ -19,7 +19,9 @@ def telegram_bot(TOKEN):
     @bot.message_handler(commands=["start"])
     def start_message(message):
         username = message.from_user.username
-        bot.send_message(message.chat.id, f"Привет @{username}, напиши 'цена' и я пришлю тебе цену BTC.")
+        bot.send_message(message.chat.id, f"Привет @{username}, напиши 'цена' "
+                                          f"и я пришлю тебе цену BTC.")
+
 
     @bot.message_handler(content_types=["text"])
     def send_text(message):
@@ -30,7 +32,8 @@ def telegram_bot(TOKEN):
                 sell_price = response["btc_usd"]["sell"]
                 bot.send_message(
                     message.chat.id,
-                    f"{datetime.now().strftime('%Y-%m-%d %H:%M')}\nЦена продажи BTC: {sell_price} USD"
+                    f"{datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
+                    f"Цена продажи BTC: {sell_price} USD"
                 )
             except Exception as ex:
                 print(ex)
