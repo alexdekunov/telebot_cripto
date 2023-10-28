@@ -39,7 +39,7 @@ def telegram_bot(TOKEN):
                 print(ex)
                 bot.send_message(
                     message.chat.id,
-                    "Что-то пошло не так"
+                    "Что-то пошло не так, я походу приболел."
                 )
         else:
             bot.send_message(message.chat.id, "Проверь введённый текст!")
